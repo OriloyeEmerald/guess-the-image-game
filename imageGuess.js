@@ -1,7 +1,12 @@
 
 function loaded() {
-    alert('CLICK ON AN IMAGE \uD83D\uDC47 TO MAKE A GUESS');
+    setTimeout(function() {
+        alert('CLICK ON AN IMAGE \uD83D\uDC47 TO MAKE A GUESS');
+    }, 2000); 
 }
+
+window.onload = loaded;
+
 
 window.onload = loaded;
 
@@ -45,7 +50,6 @@ function handleChange(event) {
         p.style.display = 'none';
         overlay.style.display = 'none';
 
-        img.classList.add('image-unblurred');
 
         img.removeEventListener('click', imgFunc);
         alert('HURRAY \uD83C\uDF89 YOU GUESSED RIGHT!');
