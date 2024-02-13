@@ -1,5 +1,10 @@
 
-alert('CLICK ON AN IMAGE \uD83D\uDC47 TO MAKE A GUESS')
+function loaded() {
+    alert('CLICK ON AN IMAGE \uD83D\uDC47 TO MAKE A GUESS');
+}
+
+window.onload = loaded;
+
 let imgs = document.getElementsByClassName('image');
 let inputs = document.getElementsByTagName('input');
 let p = document.getElementsByTagName('p');
@@ -8,26 +13,22 @@ function imgFunc(event) {
     let tag = event.target;
     let overlay = tag.nextElementSibling;
     let input = overlay.nextElementSibling;
-    let p = input.nextElementSibling
+    let p = input.nextElementSibling;
 
-    if (overlay.style.display === 'block' &&input.style.display === 'block' &&  p.style.display === 'block') {
-        overlay.style.display = 'none'
+    if (overlay.style.display === 'block' && input.style.display === 'block' && p.style.display === 'block') {
+        overlay.style.display = 'none';
         input.style.display = 'none';
         p.style.display = 'none';
     } else {
-        overlay.style.display = 'block'
+        overlay.style.display = 'block';
         input.style.display = 'block';
         p.style.display = 'block';
     }
-     
-
 }
 
-for(let i = 0; i < imgs.length; i++) {
-    imgs[i].addEventListener('click', imgFunc)
-    
+for (let i = 0; i < imgs.length; i++) {
+    imgs[i].addEventListener('click', imgFunc);
 }
-
 
 // Function to handle input change event
 function handleChange(event) {
@@ -45,11 +46,9 @@ function handleChange(event) {
         overlay.style.display = 'none';
 
         img.classList.add('image-unblurred');
-        
-        img.removeEventListener('click', imgFunc);
-        alert('HURRAY\uD83C\uDF89 YOU GUESSED RIGHT!')
 
-       
+        img.removeEventListener('click', imgFunc);
+        alert('HURRAY \uD83C\uDF89 YOU GUESSED RIGHT!');
     }
 
     switch (tag.value.toLowerCase()) {
@@ -63,11 +62,10 @@ function handleChange(event) {
             handleCorrectGuess();
             break;
         default:
-            alert('WRONG GUESS\uD83D\uDE41, TRY AGAIN..');
+            alert('WRONG GUESS \uD83D\uDE41, TRY AGAIN.');
             tag.value = '';
     }
 }
-
 
 // Function to handle keydown event
 function handleKeydown(event) {

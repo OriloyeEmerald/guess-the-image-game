@@ -71,7 +71,7 @@ h1 {
     margin-top: 1rem;
     text-align: center;
     /* font-family: 'Nova Script'; */
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
 
 .head {
@@ -92,7 +92,11 @@ h1 {
     display: none;
 }
 
-.image-unblurred {
+/* .image-unblurred {
     opacity: 0;
     transition: opacity 0.5s ease;
+} */
+
+.visible {
+    display: block; 
 }
