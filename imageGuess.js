@@ -5,8 +5,6 @@ function loaded() {
     }, 2000); 
 }
 
-window.onload = loaded;
-
 
 window.onload = loaded;
 
@@ -69,8 +67,14 @@ function handleChange(event) {
             alert('WRONG GUESS \uD83D\uDE41, TRY AGAIN.');
             tag.value = '';
     }
+    setTimeout(reblur, 4000, img)
 }
 
+ function reblur(img) {
+    let name = img.id;
+    name = name + 'blur' + '.jpg';
+    img.src = `/images/${name}`;
+ }
 // Function to handle keydown event
 function handleKeydown(event) {
     if (event.key === 'Enter') {
